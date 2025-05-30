@@ -6,12 +6,11 @@ function httpGet(theUrl){
     xmlHttp.open("GET", theUrl, false); // sync request
     try {
         xmlHttp.send(null);
-        console.log("Status: " + xmlHttp.status);
-        console.log("ReadyState: " + xmlHttp.readyState);
-        console.log("Response: " + xmlHttp.responseText);
-        return xmlHttp.responseText;
+        return xmlHttp;
     } catch (e) {
         console.error("Request error: " + e.message);
+        console.log("Status: " + xmlHttp.status);
+        console.log("ReadyState: " + xmlHttp.readyState);
         return null;
     }
 }
@@ -22,14 +21,8 @@ var Main =
 };
 
 function realOnload(){	
-	//try {
-		var result = httpGet("http://10.0.4.6/test.txt");
-		console.info(result);
-		//console.log("Result is: " + result);
-	//} catch (e) {
-		//console.error("Caught error: " + e.message);
-	//}
-	
+	var result = httpGet("http://10.0.4.6/test.txt");
+	console.info(result.responseText);
 }
 
 Main.onLoad = function()
@@ -37,8 +30,6 @@ Main.onLoad = function()
 	// Enable key event processing
 	this.enableKeys();
 	widgetAPI.sendReadyEvent();
-	
-	//httpGet("10.0.4.46:80/w");
 };
 
 Main.onUnload = function()
