@@ -8,14 +8,6 @@ function httpGet(theUrl){
     return xmlHttp.responseText;
 }
 
-console.log = function(text){
-	var el = document.createElement("p");
-
-	el.innerHTML = text;
-
-	document.body.appendChild(el);
-};
-
 var Main =
 {
 
@@ -31,6 +23,15 @@ function realOnload(){
 	document.body.appendChild(newEl);
 	
 	console.log("console.log(horray)");
+	console.error("error");
+	
+	try {
+		var result = httpGet("10.0.4.6/widgetlist.xml");
+		console.log("Result is: " + result);
+	} catch (e) {
+		console.error("Caught error: " + e.message);
+	}
+	
 }
 
 Main.onLoad = function()
