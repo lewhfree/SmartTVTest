@@ -5,6 +5,12 @@ import socketserver
 
 zip_filename = 'zip.zip'
 
+zip_path = Path(zip_filename)
+
+if zip_path.exists():
+    zip_path.unlink()
+
+
 excluded_files = {'widgetlist.xml', zip_filename, ".gitignore", ".project"}
 excluded_dirs = {'__pycache__', '.git', ".settings"}
 
