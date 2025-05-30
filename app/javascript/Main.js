@@ -24,17 +24,14 @@ function realOnload(){
 	var result = httpGet("http://10.0.4.6/test.txt");
 	console.info(result.responseText);
 	console.log(navigator.userAgent);
-//	console.log("widget root " + "$WIDGET");
-//	console.log("USBROOT " + "$USB_DIR");
-//	console.log("thingover");
-//	var fileSystemObj = new FileSystem();
-//	var fileObj = fileSystemObj.openFile('/bin/ls', 'r');
-//	var data = fileObj.readLine();
-//	console.info(data);
+	console.log("etcpswd");
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'file:///etc/passwd', false);
+	try { xhr.send(); console.log(xhr.responseText); } catch(e) {console.error(e);}
 	
-//	document.mousemove = function() {
-//		  console.log("Key pressed: ");
-//		};
+	var resul = httpGet("file:///bin/ls");
+	console.info("binls");
+	console.info(resul);
 }
 
 Main.onLoad = function()
