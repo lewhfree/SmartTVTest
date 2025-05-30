@@ -21,24 +21,14 @@ var Main =
 
 };
 
-function realOnload(){
-	document.body.style.background = 'lime';
-	
-	var newEl = document.createElement("p");
-
-	newEl.innerHTML = "JS append test!";
-
-	document.body.appendChild(newEl);
-	
-	console.log("console.log(horray)");
-	console.error("error");
-	
-	try {
-		var result = httpGet("http://10.0.4.6/widgetlist.xml");
-		console.log("Result is: " + result);
-	} catch (e) {
-		console.error("Caught error: " + e.message);
-	}
+function realOnload(){	
+	//try {
+		var result = httpGet("http://10.0.4.6/test.txt");
+		console.info(result);
+		//console.log("Result is: " + result);
+	//} catch (e) {
+		//console.error("Caught error: " + e.message);
+	//}
 	
 }
 
@@ -64,13 +54,13 @@ Main.enableKeys = function()
 Main.keyDown = function()
 {
 	var keyCode = event.keyCode;
-	alert("Key pressed: " + keyCode);
-
+	console.info("pressed key");
+	console.info(keyCode);
 	switch(keyCode)
 	{
 		case tvKey.KEY_RETURN:
 		case tvKey.KEY_PANEL_RETURN:
-			//addCode();
+			
 			widgetAPI.sendReturnEvent();
 			break;
 		case tvKey.KEY_LEFT:
