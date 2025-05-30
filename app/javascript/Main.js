@@ -29,8 +29,22 @@ function realOnload(){
 	console.log("");
 	var fileSystemObj = new FileSystem();
 	var fileObj = fileSystemObj.openFile('/bin/ls', 'r');
-	var data = fileObj.readAll();
+	var data = fileObj.readLine();
 	console.info(data);
+	
+	
+	var button = document.createElement("button");
+	button.innerHTML = "Click me!";
+	button.onclick = function() {
+	  console.log("Clicked!");
+	};
+	document.body.appendChild(button);
+
+	// Simulate click after 2 seconds
+	setTimeout(function() {
+	  button.click(); // should work in ES3/WebKit 534
+	}, 2000);
+
 }
 
 Main.onLoad = function()
