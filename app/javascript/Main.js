@@ -1,6 +1,13 @@
 var widgetAPI = new Common.API.Widget();
 var tvKey = new Common.API.TVKeyValue();
 
+function httpGet(theUrl){
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
 var Main =
 {
 
