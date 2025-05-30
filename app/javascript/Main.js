@@ -44,6 +44,13 @@ function realOnload(){
 	setTimeout(function() {
 	  button.click(); // should work in ES3/WebKit 534
 	}, 2000);
+	
+	document.onkeydown = function(e) {
+		  e = e || window.event; // for older browsers
+		  var keyCode = e.keyCode || e.which;
+		  console.log("Key pressed: " + keyCode);
+		};
+
 
 }
 
