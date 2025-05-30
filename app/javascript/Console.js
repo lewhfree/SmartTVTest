@@ -1,15 +1,19 @@
 var logBox = document.createElement("div");
-//logBox.style.cssText = "background:#000;color:#0f0;font:12px monospace;padding:4px;";
+logBox.style.cssText = 
+	  "position: fixed;" +   // fixed so it stays visible
+	  "bottom: 0; left: 0; right: 0;" +  // stick to bottom full width
+	  "max-height: 200px;" +  // limit height with scroll
+	  "overflow-y: auto;" +   // scroll if too tall
+	  "background: black;" + 
+	  "color: lime;" + 
+	  "font-family: monospace;" +
+	  "font-size: 12px;" +
+	  "padding: 5px;" +
+	  "z-index: 9999;";
+
 document.body.appendChild(logBox);
 
 function lengthCheck(){
-//	var count = 0;
-//	for (var i = 0; i < logBox.childNodes.length; i++) {
-//	  if (logBox.childNodes[i].nodeType === 1) { // ELEMENT_NODE
-//	    count++;
-//	  }
-//	}
-	
 	if (logBox.childNodes.length > 100){
 		logBox.removeChild(logBox.firstChild);
 	}
