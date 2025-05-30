@@ -23,6 +23,7 @@
   <width itemtype="string">1920</width>  
   <height itemtype="string">1080</height> 
   <mouse>y</mouse>
+  <keyboard>y</keyboard>
   <author itemtype="group"> 
     <name itemtype="string">as</name>  
     <email itemtype="string">asdf@gm.ckas</email>  
