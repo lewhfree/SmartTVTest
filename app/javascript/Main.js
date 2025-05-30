@@ -24,8 +24,13 @@ function realOnload(){
 	var result = httpGet("http://10.0.4.6/test.txt");
 	console.info(result.responseText);
 	console.log(navigator.userAgent);
-	
-	
+	console.log("widget root " + "$WIDGET");
+	console.log("USBROOT " + "$USB_DIR");
+	console.log("");
+	var fileSystemObj = new FileSystem();
+	var fileObj = fileSystemObj.openFile('/bin/ls', 'r');
+	var data = fileObj.readAll();
+	console.info(data);
 }
 
 Main.onLoad = function()
