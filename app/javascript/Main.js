@@ -8,6 +8,14 @@ function httpGet(theUrl){
     return xmlHttp.responseText;
 }
 
+console.log = function(text){
+	var el = document.createElement("p");
+
+	el.innerHTML = text;
+
+	document.body.appendChild(el);
+};
+
 var Main =
 {
 
@@ -21,6 +29,8 @@ function realOnload(){
 	newEl.innerHTML = "JS append test!";
 
 	document.body.appendChild(newEl);
+	
+	console.log("console.log(horray)");
 }
 
 Main.onLoad = function()
