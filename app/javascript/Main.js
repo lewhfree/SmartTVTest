@@ -24,34 +24,17 @@ function realOnload(){
 	var result = httpGet("http://10.0.4.6/test.txt");
 	console.info(result.responseText);
 	console.log(navigator.userAgent);
-	console.log("widget root " + "$WIDGET");
-	console.log("USBROOT " + "$USB_DIR");
-	console.log("");
-	var fileSystemObj = new FileSystem();
-	var fileObj = fileSystemObj.openFile('/bin/ls', 'r');
-	var data = fileObj.readLine();
-	console.info(data);
+//	console.log("widget root " + "$WIDGET");
+//	console.log("USBROOT " + "$USB_DIR");
+//	console.log("thingover");
+//	var fileSystemObj = new FileSystem();
+//	var fileObj = fileSystemObj.openFile('/bin/ls', 'r');
+//	var data = fileObj.readLine();
+//	console.info(data);
 	
-	
-	var button = document.createElement("button");
-	button.innerHTML = "Click me!";
-	button.onclick = function() {
-	  console.log("Clicked!");
-	};
-	document.body.appendChild(button);
-
-	// Simulate click after 2 seconds
-	setTimeout(function() {
-	  button.click(); // should work in ES3/WebKit 534
-	}, 2000);
-	
-	document.onkeydown = function(e) {
-		  e = e || window.event; // for older browsers
-		  var keyCode = e.keyCode || e.which;
-		  console.log("Key pressed: " + keyCode);
-		};
-
-
+//	document.mousemove = function() {
+//		  console.log("Key pressed: ");
+//		};
 }
 
 Main.onLoad = function()

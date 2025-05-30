@@ -21,7 +21,8 @@
   <widgetname itemtype="string">firstTest</widgetname>  
   <description itemtype="string">Test app thanks</description>  
   <width itemtype="string">1920</width>  
-  <height itemtype="string">1080</height>  
+  <height itemtype="string">1080</height> 
+  <mouse>y</mouse>
   <author itemtype="group"> 
     <name itemtype="string">as</name>  
     <email itemtype="string">asdf@gm.ckas</email>  
