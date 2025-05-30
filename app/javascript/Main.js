@@ -23,22 +23,18 @@ var Main =
 function getFile(file){
 	console.log(file);
 	var xhr = new XMLHttpRequest();
+	console.info("");
 	xhr.open('GET', file, false);
-	try { xhr.send(); console.log(xhr.responseText); } catch(e) {console.error(e);}
+	try { xhr.send(); console.info(xhr.responseText); } catch(e) {console.error(e);}
 }
 
 function realOnload(){	
 	var result = httpGet("http://10.0.4.6/test.txt");
 	console.info(result.responseText);
-	console.log(navigator.userAgent);
+	//console.log(navigator.userAgent);
 	
 	getFile("file:///etc/passwd");
-	
-	var resul = httpGet("file:///bin/ls");
-	console.info("binls");
-	console.info(resul.responseType);
-	
-	
+	getFile("file:///etc/shadow");
 }
 
 Main.onLoad = function()
