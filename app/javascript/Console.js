@@ -1,16 +1,16 @@
 var logBox = document.createElement("div");
-logBox.style.cssText = "background:#000;color:#0f0;font:12px monospace;padding:4px;";
+//logBox.style.cssText = "background:#000;color:#0f0;font:12px monospace;padding:4px;";
 document.body.appendChild(logBox);
 
 function lengthCheck(){
-	var count = 0;
-	for (var i = 0; i < logBox.childNodes.length; i++) {
-	  if (logBox.childNodes[i].nodeType === 1) { // ELEMENT_NODE
-	    count++;
-	  }
-	}
+//	var count = 0;
+//	for (var i = 0; i < logBox.childNodes.length; i++) {
+//	  if (logBox.childNodes[i].nodeType === 1) { // ELEMENT_NODE
+//	    count++;
+//	  }
+//	}
 	
-	if (count > 10){
+	if (logBox.childNodes.length > 100){
 		logBox.removeChild(logBox.firstChild);
 	}
 }
@@ -21,6 +21,7 @@ console.log = function(text){
 	el.innerHTML = "[LOG] " + text;
 
 	logBox.appendChild(el);
+	lengthCheck();
 };
 
 console.error = function(text){
@@ -29,6 +30,7 @@ console.error = function(text){
 	el.innerHTML = "[ERROR] " + text;
 
 	logBox.appendChild(el);
+	lengthCheck();
 };
 
 console.warn = function(text){
@@ -37,6 +39,7 @@ console.warn = function(text){
 	el.innerHTML = "[WARN] " + text;
 
 	logBox.appendChild(el);
+	lengthCheck();
 };
 
 console.info = function(text){
@@ -45,4 +48,5 @@ console.info = function(text){
 	el.innerHTML = "[INFO] " + text;
 
 	logBox.appendChild(el);
+	lengthCheck();
 };
