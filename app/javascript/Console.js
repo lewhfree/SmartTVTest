@@ -1,3 +1,4 @@
+window.onload = function() {
 var logBox = document.createElement("div");
 logBox.style.cssText = 
 	  "position: fixed;" +   // fixed so it stays visible
@@ -53,4 +54,5 @@ console.info = function(text){
 
 	logBox.appendChild(el);
 	lengthCheck();
+};
 };
