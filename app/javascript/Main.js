@@ -32,27 +32,27 @@ Main.keyDown = function()
 	{
 		case tvKey.KEY_RETURN:
 		case tvKey.KEY_PANEL_RETURN:
-			addCode();
+			//addCode();
 			widgetAPI.sendReturnEvent();
 			break;
 		case tvKey.KEY_LEFT:
-			addCode();
+			//addCode();
 			break;
 		case tvKey.KEY_RIGHT:
-			addCode();
+			//addCode();
 			break;
 		case tvKey.KEY_UP:
-			addCode();
+			//addCode();
 			break;
 		case tvKey.KEY_DOWN:
-			addCode();
+			//addCode();
 			break;
 		case tvKey.KEY_ENTER:
 		case tvKey.KEY_PANEL_ENTER:
-			addCode();
+			//addCode();
 			break;
 		default:
-			addCode();
+			//addCode();
 			break;
 	}
 };

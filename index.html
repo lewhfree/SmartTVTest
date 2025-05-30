@@ -28,17 +28,13 @@
 		<p>Paragraph</p>
 		<div id="testdiv">
 			<p>more text</p>
-		</div>>
+		</div>
 		
-		<script>
-        	function addCode() {
-            	document.getElementById("add_to_me").innerHTML +=
-                `<p>added to!</p>`;
-        	}
-        	
-        	var input = document.createElement('input');
-        	input.type = 'file';
-        	input.click();
-    	</script>
+		<form method="post" enctype="multipart/form-data">
+  			<label for="file">Choose a file:</label>
+  			<input type="file" id="file" name="file">
+  			<input type="submit" value="Upload">
+		</form>
+
 	</body>
 </html>
