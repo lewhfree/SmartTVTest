@@ -13,6 +13,10 @@ var Main =
 
 };
 
+function realOnload(){
+	document.body.style.background = 'lime';
+}
+
 Main.onLoad = function()
 {
 	// Enable key event processing
