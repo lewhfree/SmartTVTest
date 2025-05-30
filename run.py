@@ -11,7 +11,7 @@ if zip_path.exists():
     zip_path.unlink()
 
 
-excluded_files = {'widgetlist.xml', zip_filename, ".gitignore", ".project"}
+excluded_files = {'widgetlist.xml', zip_filename, ".gitignore", ".project", "run.py"}
 excluded_dirs = {'__pycache__', '.git', ".settings"}
 
 base_dir = Path('.')
