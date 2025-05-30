@@ -2,6 +2,7 @@ from pathlib import Path
 import zipfile
 import http.server
 import socketserver
+import os
 
 zip_filename = 'zip.zip'
 
@@ -26,7 +27,28 @@ with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
 
         zipf.write(file_path, file_path.relative_to(base_dir))
 
-Handler = http.server.SimpleHTTPRequestHandler
+class UploadAndServeHandler(http.server.SimpleHTTPRequestHandler):
+    def do_POST(self):
+        content_length = int(self.headers.get('Content-Length', 0))
+        filename = self.headers.get('X-Filename', 'upload.dat')
 
-with socketserver.TCPServer(("", 80), Handler) as httpd:
+        data = self.rfile.read(content_length)
+
+        # Save uploaded file
+        with open(filename, 'wb') as f:
+            f.write(data)
+
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b'Upload successful\n')
+
+# Use port 80 (you may need sudo)
+PORT = 80
+with socketserver.TCPServer(("", PORT), UploadAndServeHandler) as httpd:
+    print(f"Serving on port {PORT} (GET + POST supported)")
     httpd.serve_forever()
+
+#Handler = http.server.SimpleHTTPRequestHandler
+#
+#with socketserver.TCPServer(("", 80), Handler) as httpd:
+#    httpd.serve_forever()

