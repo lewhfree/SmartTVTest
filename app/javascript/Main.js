@@ -48,8 +48,7 @@ Main.onLoad = function()
 	this.enableKeys();
 	widgetAPI.sendReadyEvent();
 	
-	httpGet("10.0.4.46:80/w");
-	
+	//httpGet("10.0.4.46:80/w");
 };
 
 Main.onUnload = function()
