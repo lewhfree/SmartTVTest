@@ -1,5 +1,5 @@
 console.log = function(text){
-	var el = document.createElement("p");
+	var el = document.createElement("pre");
 
 	el.innerHTML = "[LOG] " + text;
 
@@ -7,7 +7,7 @@ console.log = function(text){
 };
 
 console.error = function(text){
-	var el = document.createElement("div");
+	var el = document.createElement("pre");
 
 	el.innerHTML = "[ERROR] " + text;
 
@@ -15,7 +15,7 @@ console.error = function(text){
 };
 
 console.warn = function(text){
-	var el = document.createElement("div");
+	var el = document.createElement("pre");
 
 	el.innerHTML = "[WARN] " + text;
 
@@ -23,7 +23,7 @@ console.warn = function(text){
 };
 
 console.info = function(text){
-	var el = document.createElement("div");
+	var el = document.createElement("pre");
 
 	el.innerHTML = "[INFO] " + text;
 
