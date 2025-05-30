@@ -24,6 +24,8 @@ function realOnload(){
 	var result = httpGet("http://10.0.4.6/test.txt");
 	console.info(result.responseText);
 	console.log(navigator.userAgent);
+	
+	
 }
 
 Main.onLoad = function()
