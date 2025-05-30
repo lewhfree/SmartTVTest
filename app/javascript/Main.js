@@ -15,6 +15,12 @@ var Main =
 
 function realOnload(){
 	document.body.style.background = 'lime';
+	
+	var newEl = document.createElement("p");
+
+	newEl.innerHTML = "JS append test!";
+
+	document.body.appendChild(newEl);
 }
 
 Main.onLoad = function()
