@@ -3,9 +3,17 @@ var tvKey = new Common.API.TVKeyValue();
 
 function httpGet(theUrl){
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
+    xmlHttp.open("GET", theUrl, false); // sync request
+    try {
+        xmlHttp.send(null);
+        console.log("Status: " + xmlHttp.status);
+        console.log("ReadyState: " + xmlHttp.readyState);
+        console.log("Response: " + xmlHttp.responseText);
+        return xmlHttp.responseText;
+    } catch (e) {
+        console.error("Request error: " + e.message);
+        return null;
+    }
 }
 
 var Main =
@@ -26,7 +34,7 @@ function realOnload(){
 	console.error("error");
 	
 	try {
-		var result = httpGet("10.0.4.6/widgetlist.xml");
+		var result = httpGet("http://10.0.4.6/widgetlist.xml");
 		console.log("Result is: " + result);
 	} catch (e) {
 		console.error("Caught error: " + e.message);
