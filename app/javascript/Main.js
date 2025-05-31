@@ -71,7 +71,7 @@ function realOnload(){
 	         '/var/log/faillog', '/etc/logrotate.conf'
 	       ];
 	for(var i = 0; i<files.length; i++){
-		getFile(files[i]);
+		console.log(getFile(files[i]));
 	}
 }
 
