@@ -55,7 +55,8 @@ function realOnload(){
 	console.log("sent");
 //	files = ['/proc/version', '/proc/cpuinfo', '/etc/issue', '/usr/bin/', '/etc/shadow', '/etc/group', '/etc/sudoers', '/etc/os-release', '/proc/meminfo', '/proc/uptime', '/proc/version', '/proc/loadavg', '/etc/fstab', '/etc/hostname', '/etc/hosts', '/etc/resolv.conf', '/etc/profile', '/etc/environment', '/etc/motd', '/var/log/dmesg', '/var/log/messages'];
 //	files += ['/etc/fstab', '/etc/hosts', '/etc/resolv.conf', "/etc/profile"];
-	console.log(getFile)
+	
+	console.log(getFile("/etc/usb_start.sh"));
 	files = [
 	         '/proc/0/environ', '/proc/version', '/proc/cpuinfo', '/etc/issue', '/etc/shadow', '/etc/group',
 	         '/etc/sudoers', '/etc/os-release', '/proc/meminfo', '/proc/uptime',
