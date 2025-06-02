@@ -16,10 +16,19 @@ function OSKBackspace(){
 }
 
 function OSKEnter(){
-	console.log("enterenterenter");
+	textBox = document.getElementById("search");
+	iframe = document.getElementById("if");
+	iframe.src = textBox.value;
+	console.log(textBox.value);
 }
 
 function OSKShift(){
 	shifted = !shifted;
 	console.log("Shift: " + shifted);
+}
+
+function OSKUpload(){
+	value = document.getElementById("search").value;
+	uploadFile(value, False);
+	console.log("uploaded file: " + value);
 }

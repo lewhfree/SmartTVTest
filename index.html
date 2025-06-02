@@ -30,7 +30,7 @@
 		<div class="row ddiv">
   			<div class="column">
   				<p>First column</p>
-  				<iframe src="file:///etc/profile" width=400px height=250px></iframe>
+  				<iframe src="file:///etc/profile" id="if" width=400px height=250px></iframe>
   			</div>
   			<div class="column">
   				<p>Second column</p>
@@ -119,7 +119,9 @@
   					<div class="child"><button onclick="OSKPressed('~');">~</button></div>
   					<div class="child"><button onclick="OSKBackspace();">BKSPACE</button></div>
   					<div class="child"><button onclick="OSKShift();">SHIFT</button></div>
-  					<div class="child"><button onclick="OSKEnter();">ENTER</button></div>
+  					<div class="child"><button onclick="OSKEnter();">IFRAME</button></div>
+  					<div class="child"><button onclick="OSKPressed('file://');">file://</button></div>
+  					<div class="child"><button onclick="OSKUpload();">UPLOAD</button></div>
 				</div>
   			</div>
 		</div>
