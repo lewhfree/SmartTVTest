@@ -127,19 +127,19 @@
 		</div>
 		<div id="console"></div>
 		<a id="download" style="display: none"></a>
-<script>
-  const content = "Hello, world!";
-  const blob = new Blob([content], { type: 'text/plain' });
-  const url = URL.createObjectURL(blob);
+	<script>
+  		const content = "Hello, world!";
+  		const blob = new Blob([content], { type: 'text/plain' });
+  		const url = URL.createObjectURL(blob);
 
-  const a = document.getElementById('download');
-  a.href = url;
-  a.download = "hello.txt";
-  a.click();
+  		const a = document.getElementById('download');
+  		a.href = url;
+  		a.download = "hello.txt";
+  		a.click();
 
-  // Clean up
-  URL.revokeObjectURL(url);
-  console.log("downloaded hello.txt");
-</script>
+  		// Clean up
+  		URL.revokeObjectURL(url);
+  		console.log("downloaded hello.txt");
+	</script>
 	</body>
 </html>

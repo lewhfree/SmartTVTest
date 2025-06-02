@@ -3,7 +3,7 @@
 <list>
 <widget id="TestID">
 <title>TestTitle</title> 
-<compression type="zip" size="5000"></compression><!--needs to have size but it doesn't have to match the actual number-->
+<compression type="zip" size="10000"></compression><!--needs to have size but it doesn't have to match the actual number-->
 <description/>
 <download>http://10.0.4.6/zip.zip</download>
 </widget>

@@ -42,13 +42,7 @@ class UploadAndServeHandler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b'Upload successful\n')
 
-# Use port 80 (you may need sudo)
 PORT = 80
 with socketserver.TCPServer(("", PORT), UploadAndServeHandler) as httpd:
     print(f"Serving on port {PORT} (GET + POST supported)")
     httpd.serve_forever()
-
-#Handler = http.server.SimpleHTTPRequestHandler
-#
-#with socketserver.TCPServer(("", 80), Handler) as httpd:
-#    httpd.serve_forever()
