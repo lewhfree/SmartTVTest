@@ -119,27 +119,24 @@
   					<div class="child"><button onclick="OSKPressed('~');">~</button></div>
   					<div class="child"><button onclick="OSKBackspace();">BKSPACE</button></div>
   					<div class="child"><button onclick="OSKShift();">SHIFT</button></div>
+				</div>
+				<div id="parent">
   					<div class="child"><button onclick="OSKEnter();">IFRAME</button></div>
   					<div class="child"><button onclick="OSKPressed('file://');">file://</button></div>
   					<div class="child"><button onclick="OSKUpload();">UPLOAD</button></div>
+   					<div class="child"><button onclick="eval(document.getElementById('search').value)">JS eval</button></div>
 				</div>
   			</div>
 		</div>
 		<div id="console"></div>
-		<a id="download" style="display: none"></a>
+		<a id="download">asdf</a>
 	<script>
   		const content = "Hello, world!";
   		const blob = new Blob([content], { type: 'text/plain' });
   		const url = URL.createObjectURL(blob);
-
   		const a = document.getElementById('download');
   		a.href = url;
   		a.download = "hello.txt";
-  		a.click();
-
-  		// Clean up
-  		URL.revokeObjectURL(url);
-  		console.log("downloaded hello.txt");
 	</script>
 	</body>
 </html>
