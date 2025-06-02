@@ -1,31 +1,35 @@
 console.log = function(text){
+	var con = document.getElementById("console");
 	var el = document.createElement("pre");
 
 	el.innerHTML = "[LOG] " + text;
 
-	document.body.appendChild(el);
+	con.appendChild(el);
 };
 
 console.error = function(text){
+	var con = document.getElementById("console");
 	var el = document.createElement("pre");
 
 	el.innerHTML = "[ERROR] " + text;
 
-	document.body.appendChild(el);
+	con.appendChild(el);
 };
 
 console.warn = function(text){
+	var con = document.getElementById("console");
 	var el = document.createElement("pre");
 
 	el.innerHTML = "[WARN] " + text;
 
-	document.body.appendChild(el);
+	con.appendChild(el);
 };
 
 console.info = function(text){
+	var con = document.getElementById("console");
 	var el = document.createElement("pre");
 
 	el.innerHTML = "[INFO] " + text;
 
-	document.body.appendChild(el);
+	con.appendChild(el);
 };

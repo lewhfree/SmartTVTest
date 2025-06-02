@@ -11,7 +11,8 @@
 		<!-- TODO : Javascript code -->
 		<script language="javascript" type="text/javascript" src="app/javascript/Console.js"></script>
 		<script language="javascript" type="text/javascript" src="app/javascript/Main.js"></script>
-
+		<script language="javascript" type="text/javascript" src="app/javascript/osk.js"></script>
+		
 		<!-- TODO : Style sheets code -->
 		<link rel="stylesheet" href="app/stylesheets/Main.css" type="text/css">
 
@@ -20,12 +21,108 @@
 	</head>
 
 	<body onload="Main.onLoad();realOnload();" onunload="Main.onUnload();">
-
+		
 		<!-- Dummy anchor as focus for key events -->
 		<a href="javascript:void(0);" id="anchor" onkeydown="Main.keyDown();"></a>
 
 		<!-- TODO: your code here -->
 		<h1>H1</h1>
-		<iframe src="file:///etc/" width="800" height="400"></iframe>
+		<div class="row">
+  			<div class="column">
+  				<p>First column</p>
+  				<iframe src="file:///etc/profile"></iframe>
+  				<div id="console"></div>
+  			</div>
+  			<div class="column">
+  				<p>Second column</p>
+  				
+  				<input type="text" id="search">
+ 
+  				<div id="parent">
+  					<div class="child"><button onclick="OSKPressed('`');">`</button></div>
+  					<div class="child"><button onclick="OSKPressed('1');">1</button></div>
+  					<div class="child"><button onclick="OSKPressed('2');">2</button></div>
+  					<div class="child"><button onclick="OSKPressed('3');">3</button></div>
+  					<div class="child"><button onclick="OSKPressed('4');">4</button></div>
+  					<div class="child"><button onclick="OSKPressed('5');">5</button></div>
+  					<div class="child"><button onclick="OSKPressed('6');">6</button></div>
+  					<div class="child"><button onclick="OSKPressed('7');">7</button></div>
+  					<div class="child"><button onclick="OSKPressed('8');">8</button></div>
+  					<div class="child"><button onclick="OSKPressed('9');">9</button></div>
+  					<div class="child"><button onclick="OSKPressed('0');">0</button></div>
+  					<div class="child"><button onclick="OSKPressed('-');">-</button></div>
+  					<div class="child"><button onclick="OSKPressed('=');">=</button></div>
+				</div>
+  				<div id="parent">
+  					<div class="child"><button onclick="OSKPressed('Q');">Q</button></div>
+  					<div class="child"><button onclick="OSKPressed('W');">W</button></div>
+  					<div class="child"><button onclick="OSKPressed('E');">E</button></div>
+  					<div class="child"><button onclick="OSKPressed('R');">R</button></div>
+  					<div class="child"><button onclick="OSKPressed('T');">T</button></div>
+  					<div class="child"><button onclick="OSKPressed('Y');">Y</button></div>
+  					<div class="child"><button onclick="OSKPressed('U');">U</button></div>
+  					<div class="child"><button onclick="OSKPressed('I');">I</button></div>
+  					<div class="child"><button onclick="OSKPressed('O');">O</button></div>
+  					<div class="child"><button onclick="OSKPressed('P');">P</button></div>
+  					<div class="child"><button onclick="OSKPressed('[');">[</button></div>
+  					<div class="child"><button onclick="OSKPressed(']');">]</button></div>
+  					<div class="child"><button onclick="OSKPressed('\');">\</button></div>
+				</div>	
+  				<div id="parent">
+  					<div class="child"><button onclick="OSKPressed('A');">A</button></div>
+  					<div class="child"><button onclick="OSKPressed('S');">S</button></div>
+  					<div class="child"><button onclick="OSKPressed('D');">D</button></div>
+  					<div class="child"><button onclick="OSKPressed('F');">F</button></div>
+  					<div class="child"><button onclick="OSKPressed('G');">G</button></div>
+  					<div class="child"><button onclick="OSKPressed('H');">H</button></div>
+  					<div class="child"><button onclick="OSKPressed('J');">J</button></div>
+  					<div class="child"><button onclick="OSKPressed('K');">K</button></div>
+  					<div class="child"><button onclick="OSKPressed('L');">L</button></div>
+  					<div class="child"><button onclick="OSKPressed(';');">;</button></div>
+  					<div class="child"><button onclick="OSKPressed('\'');">'</button></div>
+				</div>
+  				<div id="parent">
+  					<div class="child"><button onclick="OSKPressed('Z');">Z</button></div>
+  					<div class="child"><button onclick="OSKPressed('X');">X</button></div>
+  					<div class="child"><button onclick="OSKPressed('C');">C</button></div>
+  					<div class="child"><button onclick="OSKPressed('V');">V</button></div>
+  					<div class="child"><button onclick="OSKPressed('B');">B</button></div>
+  					<div class="child"><button onclick="OSKPressed('N');">N</button></div>
+  					<div class="child"><button onclick="OSKPressed('M');">M</button></div>
+  					<div class="child"><button onclick="OSKPressed(',');">,</button></div>
+  					<div class="child"><button onclick="OSKPressed('.');">.</button></div>
+  					<div class="child"><button onclick="OSKPressed('/');">/</button></div>
+  					<div class="child"><button onclick="OSKPressed(' ');">SPACE</button></div>
+				</div>
+  				<div id="parent">
+  					<div class="child"><button onclick="OSKPressed('!');">!</button></div>
+  					<div class="child"><button onclick="OSKPressed('@');">@</button></div>
+  					<div class="child"><button onclick="OSKPressed('#');">#</button></div>
+  					<div class="child"><button onclick="OSKPressed('$');">$</button></div>
+  					<div class="child"><button onclick="OSKPressed('%');">%</button></div>
+  					<div class="child"><button onclick="OSKPressed('^');">^</button></div>
+  					<div class="child"><button onclick="OSKPressed('&');">&</button></div>
+  					<div class="child"><button onclick="OSKPressed('*');">*</button></div>
+  					<div class="child"><button onclick="OSKPressed('(');">(</button></div>
+  					<div class="child"><button onclick="OSKPressed(')');">)</button></div>
+  					<div class="child"><button onclick="OSKPressed('_');">_</button></div>
+  					<div class="child"><button onclick="OSKPressed('+');">+</button></div>
+				</div>
+  				<div id="parent">
+  					<div class="child"><button onclick="OSKPressed('{}');">{</button></div>
+  					<div class="child"><button onclick="OSKPressed('}');">}</button></div>
+  					<div class="child"><button onclick="OSKPressed('|');">|</button></div>
+  					<div class="child"><button onclick="OSKPressed(':');">:</button></div>
+  					<div class="child"><button onclick="OSKPressed('&quot;');">"</button></div>
+  					<div class="child"><button onclick="OSKPressed('<');">&lt;</button></div>
+  					<div class="child"><button onclick="OSKPressed('>');">&gt;</button></div>
+  					<div class="child"><button onclick="OSKPressed('?');">?</button></div>
+  					<div class="child"><button onclick="OSKPressed('~');">~</button></div>
+  					<div class="child"><button onclick="OSKBackspace();">BKSPACE</button></div>
+  					<div class="child"><button onclick="OSKShift();">SHIFT</button></div>
+  					<div class="child"><button onclick="OSKEnter();">ENTER</button></div>
+				</div>
+  			</div>
+		</div>
 	</body>
 </html>

@@ -12,3 +12,24 @@ body
 	height: 1080px;
 	background-color: white;
 }
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#parent { white-space: nowrap; }
+.child { display: inline-block; }
+
+button
+{
+	width: fit-content;
+	padding: 0px 10px;
+}
