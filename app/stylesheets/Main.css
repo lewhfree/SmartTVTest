@@ -15,7 +15,9 @@ body
 
 .column {
   float: left;
-  width: 50%;
+  width: 46%;
+  margin: 2px;
+  border: 1px solid black
 }
 
 /* Clear floats after the columns */
@@ -32,4 +34,9 @@ button
 {
 	width: fit-content;
 	padding: 0px 10px;
+}
+
+.console {
+	background-color:black;
+	color: lime;
 }
