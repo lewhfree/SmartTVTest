@@ -27,10 +27,10 @@
 
 		<!-- TODO: your code here -->
 		<h1>H1</h1>
-		<div class="row">
+		<div class="row ddiv">
   			<div class="column">
   				<p>First column</p>
-  				<iframe src="file:///etc/profile"></iframe>
+  				<iframe src="file:///etc/profile" width=400px height=250px></iframe>
   			</div>
   			<div class="column">
   				<p>Second column</p>
@@ -124,5 +124,20 @@
   			</div>
 		</div>
 		<div id="console"></div>
+		<a id="download" style="display: none"></a>
+<script>
+  const content = "Hello, world!";
+  const blob = new Blob([content], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.getElementById('download');
+  a.href = url;
+  a.download = "hello.txt";
+  a.click();
+
+  // Clean up
+  URL.revokeObjectURL(url);
+  console.log("downloaded hello.txt");
+</script>
 	</body>
 </html>

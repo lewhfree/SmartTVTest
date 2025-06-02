@@ -12,12 +12,18 @@ body
 	height: 1080px;
 	background-color: white;
 }
-
+.ddiv
+{
+	height:30%;
+}
+.ddiv2{
+	/*height:60%;*/
+}
 .column {
   float: left;
-  width: 46%;
+  width: 48%;
   margin: 2px;
-  border: 1px solid black
+  /*border: 1px solid black*/
 }
 
 /* Clear floats after the columns */
@@ -36,7 +42,10 @@ button
 	padding: 0px 10px;
 }
 
-.console {
+#console {
+	width:50%;
 	background-color:black;
 	color: lime;
+	overflow:hidden
+	
 }
