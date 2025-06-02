@@ -15,8 +15,7 @@ function httpGet(theUrl){
     }
 }
 
-var Main =
-{
+var Main ={
 
 };
 
@@ -59,26 +58,25 @@ function realOnload(){
 	xhr.send("hello world");
 	console.log("sent xhr? file write.");
 	
-	let keys = Object.getOwnPropertyNames(window);
-	let i = 0;
-	while (i < keys.length) {
-	  try {
-	    console.log(keys[i]);
-	  } catch (e) {
-	    console.log("inaccessible");
-	  }
-	  i++;
-	};
+//	let keys = Object.getOwnPropertyNames(window);
+//	let i = 0;
+//	while (i < keys.length) {
+//	  try {
+//	    console.log(keys[i]);
+//	  } catch (e) {
+//	    console.log("inaccessible");
+//	  }
+//	  i++;
+//	};
 	
-	throw new Error("InjectedLogTest; echo a > /tmp/txt.txt");
+	//throw new Error("InjectedLogTest; echo a > /tmp/txt.txt");
 	//write port scanner
 	
 	uploadFile("/tmp/txt.txt",true);
 	uploadFile("/tmp/test.txt", true);
 }
 
-Main.onLoad = function()
-{
+Main.onLoad = function(){
 	// Enable key event processing
 	this.enableKeys();
 	widgetAPI.sendReadyEvent();
