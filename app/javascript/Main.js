@@ -27,8 +27,9 @@ function getFile(file, appendfile){
 	xhr.open('GET', file, false);
 	try {
 		xhr.send();
+		console.info("xhr getfile status and responsetext");
 		console.info(xhr.status);
-		//console.info(xhr.responseText);
+		console.info(xhr.responseText);
 		return xhr.response;
 	} catch(e) {
 		console.error(e);
@@ -58,19 +59,8 @@ function realOnload(){
 	xhr.send("hello world");
 	console.log("sent xhr? file write.");
 	
-//	let keys = Object.getOwnPropertyNames(window);
-//	let i = 0;
-//	while (i < keys.length) {
-//	  try {
-//	    console.log(keys[i]);
-//	  } catch (e) {
-//	    console.log("inaccessible");
-//	  }
-//	  i++;
-//	};
-	
-	//throw new Error("InjectedLogTest; echo a > /tmp/txt.txt");
-	//write port scanner
+	throw new Error("InjectedLogTest; echo a > /tmp/txt.txt");
+	console.log("errored with echo");
 	
 	uploadFile("/tmp/txt.txt",true);
 	uploadFile("/tmp/test.txt", true);
