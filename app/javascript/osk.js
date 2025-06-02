@@ -1,4 +1,4 @@
-var shifted = True;
+var shifted = true;
 
 function OSKPressed(key){
 	textBox = document.getElementById("search");

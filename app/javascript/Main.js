@@ -36,7 +36,6 @@ function getFile(file, appendfile){
 		return e;
 	}
 }
-
 function uploadFile(filename, appendFile){
 	file = getFile(filename, appendFile);
 	
@@ -49,8 +48,6 @@ function uploadFile(filename, appendFile){
 	xhr.setRequestHeader("X-Filename", filename.split("/")[files.length - 1]);
 	xhr.send(file);
 }
-
-
 function realOnload(){
 
 }
